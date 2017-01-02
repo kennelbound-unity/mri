@@ -34,7 +34,7 @@ namespace MRI.Neural.Concrete
                 Color color = Color.white;
                 lr.SetColors(color, color);
 
-                float size = Mathf.Abs(conn.Weight) / 100;
+                float size = Mathf.Abs(conn.Weight) / network.Connections.Count;
                 lr.SetWidth(size, size);
 
                 lr.SetPosition(0, conn.From.Transform.position);
