@@ -1,0 +1,11 @@
+# unity-packman
+node_modules/
+.packman/
+Assets/Plugins/packman-pkgs
+.DS_Store
+/Library
+/Temp
+*.csproj
+*.sln
+*.userprefs
+/.idea

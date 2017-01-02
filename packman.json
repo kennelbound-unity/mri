@@ -1,0 +1,12 @@
+{
+  "name": "mri",
+  "export": "Assets",
+  "dependencies": [
+	"kennelbound-unity/adic",
+	
+	
+	
+	
+	"kennelbound-unity/ProjectRiderEditorSupport"
+  ]
+}
