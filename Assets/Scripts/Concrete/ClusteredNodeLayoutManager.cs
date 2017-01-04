@@ -7,6 +7,11 @@ namespace MRI.Neural.Concrete
 {
     public class ClusteredNodeLayoutManager : LayoutManager
     {
+        public float NodeScale = 0.08f;
+        public float ClusterMinScale = 0.2f;
+        public float ClusterMaxScale = 0.5f;
+        public float MaxDistance = 5f;
+
         public override void LayoutNetwork(Network network)
         {
             NodePrototype.SetActive(true);
@@ -59,17 +64,19 @@ namespace MRI.Neural.Concrete
             {
                 AddGameObject(node);
                 node.Transform.SetParent(root);
-                node.Transform.localScale = Vector3.one * 0.1f;
+                node.Transform.localScale = Vector3.one * NodeScale;
                 node.Transform.gameObject.GetComponent<Renderer>().material.color =
-                    Color.Lerp(Color.red, Color.green, Random.Range(0, 1f));
+                    Color.Lerp(Color.red, Color.Lerp(Color.blue, Color.green, Random.Range(0, 1f)),
+                        Random.Range(0, 1f));
 
                 if (parent == null)
                 {
-                    node.Transform.localPosition = Random.onUnitSphere * Random.Range(-10f, 10f);
+                    node.Transform.localPosition = Random.onUnitSphere * Random.Range(-1 * MaxDistance, MaxDistance);
                 }
                 else
                 {
-                    node.Transform.localPosition = parent.Transform.localPosition + Random.onUnitSphere * 0.2f;
+                    node.Transform.localPosition = parent.Transform.localPosition +
+                                                   Random.onUnitSphere * Random.Range(ClusterMinScale, ClusterMaxScale);
                 }
 
                 // cluster related items together

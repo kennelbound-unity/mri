@@ -60,7 +60,7 @@ namespace MRI.Neural
 
         public override void Init()
         {
-            Program.Main(new string[0]);
+//            Program.Main(new string[0]);
             Dispatcher.Dispatch<SpawnNetworkCommand>();
         }
     }
