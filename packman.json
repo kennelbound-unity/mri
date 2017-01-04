@@ -2,11 +2,8 @@
   "name": "mri",
   "export": "Assets",
   "dependencies": [
-	"kennelbound-unity/adic",
-	
-	
-	
-	
-	"kennelbound-unity/ProjectRiderEditorSupport"
+    "kennelbound-unity/ProjectRiderEditorSupport",
+    "kennelbound-unity/adic",
+    "kennelbound-unity/AI-Programmer"
   ]
 }

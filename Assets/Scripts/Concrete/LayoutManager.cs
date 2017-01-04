@@ -8,7 +8,7 @@ namespace MRI.Neural.Concrete
         [Inject("NodePrototype")] public GameObject NodePrototype;
         [Inject("ConnectionPrototype")] public GameObject ConnectionPrototype;
 
-        public void LayoutNetwork(Network network)
+        public virtual void LayoutNetwork(Network network)
         {
             NodePrototype.SetActive(true);
             ConnectionPrototype.SetActive(true);
@@ -17,8 +17,13 @@ namespace MRI.Neural.Concrete
             {
                 AddGameObject(node);
                 node.Transform.localPosition = Random.onUnitSphere * 2f;
-                node.Transform.localScale = Vector3.one * node.Weight;
+                node.Transform.localScale = Vector3.one * Mathf.Max(0.1f, node.Weight / network.Nodes.Count);
                 node.Transform.SetParent(network.Root);
+
+                Color color = Color.Lerp(Color.blue, Color.red, node.Weight / network.Nodes.Count);
+                Renderer r = node.Transform.GetComponent<Renderer>();
+                r.material.SetColor("_EmissionColor", new Color(1f, 1f, 1f, .3f));
+                r.material.SetColor("_Color", color);
             }
 
             foreach (Connection conn in network.Connections)

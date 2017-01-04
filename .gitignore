@@ -9,3 +9,5 @@ Assets/Plugins/packman-pkgs
 *.sln
 *.userprefs
 /.idea
+my-genetic-algorithm.dat
+
