@@ -5,7 +5,7 @@ using MRI.Neural.Commands;
 using MRI.Neural.Concrete;
 using UnityEngine;
 
-namespace MRI.Neural
+namespace MRI.Neural.Contexts
 {
     public class ProgramCreatingContext : ContextRoot
     {

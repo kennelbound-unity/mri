@@ -1,0 +1,6 @@
+<PauseMenu>
+    <Group Spacing="10px" Alignment="Top">
+        <Button Text="Resume" Click="Resume"/>
+        <Button Text="Quit" Click="Quit"/>
+    </Group>
+</PauseMenu>

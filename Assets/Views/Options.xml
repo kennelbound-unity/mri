@@ -1,0 +1,7 @@
+<Options xmlns="Marklight">
+    <Group Spacing="20px" Alignment="TopLeft" ContentAlignment="Left">
+        <Label Text="Graphics" />
+        <CheckBox Text="Enable Depth of Field" IsChecked="{DepthOfFieldEnabled}" />
+        <Button Text="Save" Click="Save" Width="250px" />
+    </Group>
+</Options>

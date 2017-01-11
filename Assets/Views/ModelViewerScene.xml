@@ -1,0 +1,18 @@
+﻿<ModelViewerScene xmlns="Marklight">
+    <ContentPlaceholder Id="Root" />
+
+    <UserInterface>
+        <ViewSwitcher Id="MainContentSwitcher" TransitionIn="FadeIn">
+            <Region>
+                <PauseMenu MainContentSwitcher="{=MainContentSwitcher}"/>
+            </Region>
+        </ViewSwitcher>
+    </UserInterface>
+
+    <EventSystem/>
+
+    <ViewAnimation Id="FadeIn">
+        <Animate Field="Alpha" From="0" To="1" Duration="0.2s"
+                 EasingFunction="QuadraticEaseIn"/>
+    </ViewAnimation>
+</ModelViewerScene>

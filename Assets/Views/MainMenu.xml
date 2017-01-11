@@ -1,0 +1,20 @@
+<MainMenu>
+    <Region Width="25%" Alignment="Left" Margin="30,30,15,30">
+        <Group Spacing="10px" Alignment="Top">
+            <Button Text="Play" Click="StartGame"/>
+            <Button Text="Options" Click="Options"/>
+            <Button Text="Quit" Click="Quit"/>
+        </Group>
+    </Region>
+    <Region Width="75%" Alignment="Right" Margin="15,30,30,30">
+        <ViewSwitcher Id="ContentViewSwitcher" TransitionIn="FadeIn">
+            <Region/>
+            <Region BackgroundColor="Red"/>
+            <Options Volume="75" PlayerName="Player" EasyMode="True"/>
+        </ViewSwitcher>
+    </Region>
+    <ViewAnimation Id="FadeIn">
+        <Animate Field="Alpha" From="0" To="1" Duration="0.2s"
+                 EasingFunction="QuadraticEaseIn"/>
+    </ViewAnimation>
+</MainMenu>
